@@ -1,0 +1,18 @@
+Der Aufruf b.a(Long.valueOf(100)); gibt a2 aus, da man nicht von einer Objektklasse in die andere Casten kann. Daher wird Long.valueOf(100) zunächst in einen long ge-Unboxt.
+	von da aus ist der Datentyp double der nächste, in den ohne Datenverlust gecastet werden kann.
+
+Der Aufruf b.a(Double.valueOf(100)); gibt a3 aus, da hier der Datentyp bereits den passenden Typ hat, und Java immer nach der Methode mit dem speziellsten passenden Methodenaufruf sucht.
+Der Aufruf b.a(Integer.valueOf(100)); gibt a1 aus, da vom Integer nicht in einen Double gecastet werden kann, sodass zunächst ein Unboxing stattfinden muss.
+	Danach passt der Aufruf, der einen int erwartet am besten.
+
+Der Aufruf double r1= b.b(100D); gibt b1 aus, da 100D ein Double ist und ein Methodenaufruf existiert, der exakt einen double erwartet.
+	Also kann hier durch einfaches Unboxing der gewünschte Typ erreicht werden.(Der andere Methodenaufruf hätte Unboxing + Casten erfordert)
+
+Der Aufruf int r2 = (int) b.b(100); gibt b2 aus, da die 100 als int betrachtet wird, da dies der Datentyp ist, der am speziellsten passend für einen der Methodenaufrufe ist
+	int ist spezieller als double
+
+Der Aufruf c(Integer.valueOf(100),"0"); gibt ein c2 aus, da p1 den Integer zu einem int unboxt, so dass danach die Methode mit long und String am speziellsten passend ist.
+
+Der Aufruf c(100L,"0"); gibt ein c2 aus, da das casten des Strings in einen int nicht implizit geht und Autoboxing/Unboxing nach Möglichkeit verhindert werden soll.
+
+Der Aufruf c(100L,'0'); gibt c1 aus, da der char in einen int gecastet werden kann und dies gegenüber dem Unboxing von 100L bevorzugt wird.

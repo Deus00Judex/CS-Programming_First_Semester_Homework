@@ -1,0 +1,65 @@
+A3
+	a)
+		i)Nein, da man nach dem letzten p noch einen Punkt bräuchte.
+		ii)Nein, da man :- nur auf 2 Symbole anwenden kann, sodass ":-" nur 2,4,6... mal auftreten kann.
+		iii)Ja es ist syntaktisch korrekt und wertet zu "rsp" ab
+		iv)Nein, da es kein t in den Ableitungsregeln gibt
+			
+	b)
+		Nein, weil ein Programm kann 3 ausgeben und das andere Programm kann 2+1 ausgeben, was ebenfalls 3 ist	
+	c)
+		Ja, weil in in einem System, in dem 2 kopmlett identische Eingaben eingeben werden, auch ein identischer Output entstehen muss.
+
+A5)
+	a)
+		
+
+
+A7
+	a)
+		0011001100 : 204s
+		1001001001 : -439
+		1000000000 : -512
+		1110101101 : -83
+		0010110100 : -180
+	b)
+		1)Die Addition ergibt mathematisch 4,294,967,296, da der Wertebereich aber nur von  -2147483648 (-2^31) bis 2147483647 (2^31 -1) geht
+			Wird der Wertebereich erst überschritten, sodass man wieder bei  -2147483648 steht und noch 2147483648 "übrig" sind.
+			Addiert man die beiden Zahlen kommt man exakt auf 0
+			Mittels des == wird ein Boolean erzeugt, der hier zu true auswertet.
+		2)Das mathematische Ergebnis dieser Rechnung ist -2147483648.
+			Da das minus aber vor der Klammer steht, ist das Zwischenergebnis vor der Klammer 2147483648, was den Wertebereich übersteigt, und zu -2147483648 auswertet.
+			Negiert man dies, erhält man einen Wert, der größer ist, als der MAX_INT, sodass das Vorzeichenbit wieder umschlägt und das Ergebnis ist dann der INT_MIN, also -2147483648.
+A9
+	a)
+		Hier kommt als Ergebnis -2147483648 raus, da der Wertebereich des Int um 1 überschritten wird und somit wieder von der ersten Zahl des Wertebereiches gezählt wird.
+		Die höste Zahl im Integer ist eine 0 mit 31 1en. Addiert man binär eine 1 dazu erhält man eine 1 mit 31 Oen.
+		Dies representiert den kleinsten möglichen Wert bzw den höchsten möglichen Wert jedoch mit negativem Vorzeichen.
+	b
+		Das Ergebnis ist hier -2147483528, da das Symbol x in einen int gecastet wird.
+		Im Unicode steht x für 120.
+		Addiert man die beiden, kommt es zu einem Überlauf und man erhält die oben genannte Zahl.
+	c
+		Hier ist der Output  2147483647x, da durch die Anführungszeichen das x nicht mehr als Zuordnung der Variable sondern als Zeichen interpretiert wird.
+		Wenn man in Java einen String und einen int addiert, castet der Compiler den int in einen String und gibt die beiden Strings hintereinander aus.
+	d
+		true
+		Durch das == wird der Ausdruck als ein Vergleich(also als boolean) betrachtet.
+		auf der rechten Seite ergibt sich zunächst 122, da es bei der malrechnung zu einem Überlauf kommt und dann weiter bis in den positiven Bereich geht.
+		Im Unicode steht das 'z' für 122, sodass sich 122==122 zu true auswertet und anschließend true && true als true ausgegeben wird.
+		
+	e
+		Hier wird zunächst 2147483648 in einen float gecastet und anschließend mit 3,0 addiert.
+		Da der Wertebereich des float größer ist, als der des Int, kommt es hier zu keinem Überlauf und das Endergebnis ist 2147483651.0f
+	f
+		Das Endergebnis ist 0, da (2147483648*256) mod 512= 0
+		modulo 512 kommt daher, dass der Bate einen Werteberich von 512 zahlen hat.
+		Das bedeutet, dass man so oft einen Überlauf hat, dass man am Ende,  wieder bei 0 rauskommt.
+	g
+		invalid file Type, da man den Operator "-" nicht auf Strings anwenden kann.	
+	h
+		Endergebnis: 1.0
+		(y != 'y') ergibt false, da y=121 und der Unicode-Wert von y= 121.
+		Daher gibt Java den Wert HINTER dem ":" aus, dieser wird hier in einen double gecastet, da der Rückgabewert klar definiert sein muss und der double "wichtiger" ist, sodass der Ausdruck insgesamt 1.0 zurück gibt.
+	
+		

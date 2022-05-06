@@ -1,0 +1,8 @@
+Paul Winter 409827 
+Daniel Toups 412364
+
+
+
+A6
+b)
+-? endetIn(X,wiesenalm).
